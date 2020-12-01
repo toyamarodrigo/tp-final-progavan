@@ -4,12 +4,13 @@ public class ATM {
 
 	private boolean usuarioAutenticado;
 	private int usuarioActual;
-	private Pantalla pantalla;
-	private Teclado teclado;
-	private DispensadorEfectivo dispensadorEfectivo;
-	private RanuraDeposito ranuraDeposito;
 	private BDBanco bdBanco;	
+	private Teclado teclado;
+	private Pantalla pantalla;
+	private RanuraDeposito ranuraDeposito;
+	private DispensadorEfectivo dispensadorEfectivo;
 
+	// Inicializar ATM sin parametros
 	public ATM() {
 		usuarioAutenticado = false;
 		usuarioActual = 0;

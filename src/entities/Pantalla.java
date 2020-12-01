@@ -6,4 +6,8 @@ public class Pantalla {
 		System.out.println(mensaje);
 	}
 
+	public void mostrarMonto(double monto) {
+		System.out.println("$" + monto);
+	}
+
 }
