@@ -2,7 +2,7 @@
 
 ## Actividad
 
-1. Analizar la documentación de requerimientos a fin de determinar el alcance
+1. Analizar la [documentación de requerimientos](REQUERIMIENTO.md) a fin de determinar el alcance
 del problema, objetos, clases y relaciones que permitan resolver el problema
 de diseño.
 
