@@ -18,8 +18,8 @@ public class SolicitudSaldo extends Transaccion {
         double totalBalance = bdBanco.getTotalBalance(getNumCuenta());
 
         // Mostrar pantalla, saldo y balance
-        pantalla.mostrarMensaje("Saldo disponible: " + saldoDisponible);
-        pantalla.mostrarMensaje("Balance total: " + totalBalance);
+        pantalla.mostrarMensaje("Saldo disponible: $" + saldoDisponible);
+        pantalla.mostrarMensaje("Balance total: $" + totalBalance);
         pantalla.mostrarMensaje("");
     }
 
