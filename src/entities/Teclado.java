@@ -4,14 +4,14 @@ import java.util.Scanner;
 
 public class Teclado {
 
-	private Scanner sc;
+    private Scanner sc;
 
-	public Teclado() {
-		sc = new Scanner(System.in);
-	}
+    public Teclado() {
+        sc = new Scanner(System.in);
+    }
 
-	public int getEntrada() {
-		return sc.nextInt();
-	}
+    public int getEntrada() {
+        return sc.nextInt();
+    }
 
 }
