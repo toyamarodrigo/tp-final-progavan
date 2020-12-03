@@ -61,7 +61,7 @@ public class ATM {
                         break;
                     default:
                         // Opcion invalida
-                        pantalla.mostrarMensaje(opcion + " es una opcion invalida");
+                        pantalla.mostrarMensaje(opcion + " es una opcion invalida\n");
                         break;
                 }
             }

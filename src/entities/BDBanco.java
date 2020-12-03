@@ -8,7 +8,7 @@ public class BDBanco {
     private ArrayList<Cuenta> cuentas;
 
     public BDBanco() {
-        cuentas = new ArrayList<>(3);
+        cuentas = new ArrayList<Cuenta>(3);
         cuentas.add(new Cuenta(11111, 11111, 10000.00, 15000.00));
         cuentas.add(new Cuenta(22222, 22222, 500.00, 500.00));
         cuentas.add(new Cuenta(33333, 33333, 900.00, 1000.00));
