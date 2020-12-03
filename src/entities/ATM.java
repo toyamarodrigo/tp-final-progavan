@@ -108,7 +108,7 @@ public class ATM {
             pantalla.mostrarMensaje("Bienvenido usuario: " + usuarioActual + "!\n");
         } else {
             // sino mensaje numero o pin invalido
-            pantalla.mostrarMensaje("Numero de cuenta o Pin invalido");
+            pantalla.mostrarMensaje("Numero de cuenta o Pin invalido\n");
 
         }
     }

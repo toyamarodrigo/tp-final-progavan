@@ -28,6 +28,7 @@ public class BDBanco {
         // Chequeamos si existe la cuenta
         Cuenta cuentaUsuario = getCuenta(numCuentaUsuario);
 
+        // Si existe el usuario validamos el pin ingresado con el de la base de datos
         if (cuentaUsuario != null) {
             return cuentaUsuario.validarPIN(usuarioPIN);
         } else {
