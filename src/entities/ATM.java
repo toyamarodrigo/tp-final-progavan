@@ -44,22 +44,32 @@ public class ATM {
                         // Solicitud de Saldo
                         transaccionActual = new SolicitudSaldo(usuarioActual, pantalla, bdBanco);
                         transaccionActual.iniciar();
+                        break;
                     case 2:
                         // Retiro
                         transaccionActual = new Retiro(usuarioActual, pantalla, bdBanco, dispensadorEfectivo, teclado);
                         transaccionActual.iniciar();
+                        break;
                     case 3:
                         // Deposito
                         transaccionActual = new Deposito(usuarioActual, pantalla, bdBanco, ranuraDeposito, teclado);
                         transaccionActual.iniciar();
+                        break;
                     case 4:
                         // Quit
                         usuarioQuit = true;
+                        break;
                     default:
                         // Opcion invalida
                         pantalla.mostrarMensaje(opcion + " es una opcion invalida");
+                        break;
                 }
             }
+
+            // Se deslogea el usuario y reseteamos los valores
+            usuarioAutenticado = false;
+            usuarioActual = 0;
+            pantalla.mostrarMensaje("Gracias por utilizar ATM, Adios!");
 
         }
     }
@@ -67,10 +77,12 @@ public class ATM {
     private int mostrarMenu() {
 
         // Mostramos por pantalla
+        pantalla.mostrarMensaje("************************");
         pantalla.mostrarMensaje("1) Ver saldo disponible");
         pantalla.mostrarMensaje("2) Retirar saldo");
         pantalla.mostrarMensaje("3) Depositar saldo");
         pantalla.mostrarMensaje("4) Salir");
+        pantalla.mostrarMensaje("************************");
 
         // retornar input teclado
         return teclado.getEntrada();
@@ -93,6 +105,7 @@ public class ATM {
         if (usuarioAutenticado) {
             // usuarioActual setteamos Numero de cuenta ingresado
             usuarioActual = numCuenta;
+            pantalla.mostrarMensaje("Bienvenido usuario: " + usuarioActual + "!\n");
         } else {
             // sino mensaje numero o pin invalido
             pantalla.mostrarMensaje("Numero de cuenta o Pin invalido");

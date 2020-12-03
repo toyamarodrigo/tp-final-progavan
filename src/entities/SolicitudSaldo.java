@@ -10,17 +10,17 @@ public class SolicitudSaldo extends Transaccion {
     public void iniciar() {
 
         // Banco y pantalla referencia desde transaccion;
-        // Pantalla pantalla = getPantalla();
-        // BDBanco bdBanco = getBDBanco();
+        Pantalla pantalla = getPantalla();
+        BDBanco bdBanco = getBDBanco();
 
-        // saldo y total de una cuenta
-        // saldoDisponible getSaldoDisponible(get numero de cuenta);
-        // totalBalance gettotalBalance(get numero de cuenta);
+        // saldo disponible y balance de una cuenta
+        double saldoDisponible = bdBanco.getSaldoDisponible(getNumCuenta());
+        double totalBalance = bdBanco.getTotalBalance(getNumCuenta());
 
-        // mostrar pantalla
-        // saldoDisponible
-        // balance total;
-
+        // Mostrar pantalla, saldo y balance
+        pantalla.mostrarMensaje("Saldo disponible: " + saldoDisponible);
+        pantalla.mostrarMensaje("Balance total: " + totalBalance);
+        pantalla.mostrarMensaje("");
     }
 
 }
