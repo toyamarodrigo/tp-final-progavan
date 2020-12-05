@@ -21,15 +21,15 @@ public class Deposito extends Transaccion {
         // input de monto a demositar
 
         // si monto es != 0
-        // insertar sobre con el monto
-        // boolean sobreRecibido = ranuraDeposito.recibeSobres();
-        // si sobreRecibido
-        // mostrar mensaje se recibio
-        // agregar monto a banco de la cuenta --> bdBanco.depositar(numero cuenta, monto)
-        // sino
-        //mostrar no se inserto sobre
+            // insertar sobre con el monto
+            // boolean sobreRecibido = ranuraDeposito.recibeSobres();
+            // si sobreRecibido
+                // mostrar mensaje se recibio
+                // agregar monto a banco de la cuenta --> bdBanco.depositar(numero cuenta, monto)
+            // sino
+                //mostrar no se inserto sobre
         // si monto = 0
-        // mostar se cancelo deposito
+            // mostar se cancelo deposito
 
     }
 
