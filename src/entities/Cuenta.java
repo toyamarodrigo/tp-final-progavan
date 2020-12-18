@@ -38,8 +38,16 @@ public class Cuenta {
     }
 
     public void retirar(double monto) {
-        saldoDisponible -= monto;
-        totalBalance -= monto;
+        if(monto % 20 == 0) {
+            if (monto < saldoDisponible+1) {
+                saldoDisponible -= monto;
+                totalBalance -= monto;
+            }else {
+                System.out.println("Error, no puede retirar más que su saldo.");
+            }
+        }else {
+            System.out.println("Solo puede retirar un monto divisible por 20.");
+        }
     }
 
 }
