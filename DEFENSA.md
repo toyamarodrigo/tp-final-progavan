@@ -53,18 +53,6 @@ ej: una cuenta tiene un titular.
 
 > No, realmente no hubo necesidad, se podía resolver el ejercicio sin recurrir a una interface.
 
-8. __¿Alguna de las clases del sistema puede implementar el patrón de diseño Singleton?__
-
-> Si, la clase Transaccion.
-
-9. __Cohesión y acoplamiento de clases. ¿De qué manera se aplican estos conceptos en las clases del proyecto?__
-> Cohesión: En las clases DBBanco y Cliente se ve reflejada en los métodos depositar y retirar.
->
-> Acoplamiento: Se ve reflejado en las variables de las clases ya que estas son necesarias para realizar otras acciones.
->
-> Podríamos definir la cohesión como lo estrecha que es la relación entre los componentes de algo. Si hablamos de clases, una clase tendrá una cohesión alta si sus métodos están relacionados entre sí, tienen una “temática” común, trabajan con tipos similares, etc. Si pasamos a componentes de mayor tamaño, como paquetes o librerías, tendríamos una cohesión alta cuando las clases que lo forman están muy relacionadas entre sí, con un objetivo claro y focalizado.
-El acoplamiento es la manera que se relacionan varios componentes entre ellos. Si existen muchas relaciones entre los componentes, con muchas dependencias entre ellos, tendremos un grado de acoplamiento alto. Si los componentes son independientes unos de otros, el acoplamiento será bajo. Al igual que con la cohesión, podemos ver el acoplamiento a distintos niveles y existe acoplamiento entre los métodos de una misma clase (o las funciones de un módulo), entre distintas clases o entre distintos paquetes. Además, existen varios tipos de acoplamiento, desde acoplamiento a través de datos comunes, acoplamiento temporal (es necesario utilizar los componentes en un orden concreto), etc.
-
-10. __¿Cómo explicarías la siguiente afirmación en el desarrollo presentado?__
+8. __¿Cómo explicarías la siguiente afirmación en el desarrollo presentado?__
 > “Cada objeto de una subclase es también un objeto de la superclase de esa clase.“
 

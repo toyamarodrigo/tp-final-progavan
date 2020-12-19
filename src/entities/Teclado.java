@@ -11,7 +11,11 @@ public class Teclado {
     }
 
     public int getEntrada() {
-        return sc.nextInt();
+        if (sc.hasNextInt()) {
+            return sc.nextInt();
+        } else {
+            return Integer.parseInt("Debe ingresar obligatoriamente un número entero.");
+        }
     }
 
 }

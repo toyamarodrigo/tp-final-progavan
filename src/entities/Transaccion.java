@@ -2,6 +2,8 @@ package entities;
 
 public abstract class Transaccion {
 
+    protected double montoSaldo;
+    protected double montoBalance;
     private int numCuenta;
     private Pantalla pantalla;
     private BDBanco bdBanco;

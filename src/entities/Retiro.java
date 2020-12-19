@@ -5,7 +5,6 @@ public class Retiro extends Transaccion {
     private DispensadorEfectivo dispensadorEfectivo;
     private Teclado teclado;
 
-
     protected Retiro(int numCuenta, Pantalla pantalla, BDBanco bdBanco,
                      DispensadorEfectivo dispensadorEfectivo, Teclado teclado) {
         super(numCuenta, pantalla, bdBanco);
@@ -16,46 +15,63 @@ public class Retiro extends Transaccion {
     @Override
     public void iniciar() {
         boolean efectivoDispensado = false;
+        int montoIngresado = 0;
 
         Pantalla pantalla = getPantalla();
         BDBanco bdBanco = getBDBanco();
 
-        // montos = [0,20,40,80,100,200,400]
-        // int monto = 0;
+        do {
+            // Ingresar saldo a retirar
+            pantalla.mostrarMensaje("Ingrese el saldo que desea retirar (0 para cancelar): $");
+            montoIngresado = teclado.getEntrada();
+            // Monto ingresado distinto de 0 y multiplo de 20
+            if (montoIngresado != 0) {
+                if (montoIngresado % 20 == 0) {
+                    // Chequear balance/saldo disponible de la base banco del numero de cuenta
+                    montoBalance = bdBanco.getTotalBalance(getNumCuenta());
+                    montoSaldo = bdBanco.getSaldoDisponible(getNumCuenta());
+                    if (montoIngresado <= montoBalance) {
+                        // Si el dispensador tiene la cantidad del monto requerido en billetes de 20
+                        if (dispensadorEfectivo.efectivoDisponible(montoIngresado)) {
 
-        // hacer
-            // mientras monto == 0
-                // mostrar menu para retirar monto
-                //  input del monto seleccionado
-                // switch (input)
-                    // case 1: 20
-                    // case 2: 40
-                    // case 3: 80
-                    // case 4: 100
-                    // case 5: 200
-                    // case 6: 400
-                        // guardamos en monto el montos[input]
-                    // case 7:
-                        // cancelar
-                        // guardamos en monto el input
-                    // default o 0:
-                        // monto invalido
+                            // Se retira del banco el monto ingresado
+                            bdBanco.retirar(getNumCuenta(), montoIngresado);
 
-            // si monto != 7 (cancelado)
-                // chequear balance disponible de la base banco del numero de cuenta
-                // si el monto <= saldo disponible
-                    // si el dispensador tiene la cantidad del monto requerido en billetes de 20
-                        // retirar de la base del banco el monto de la cuenta
-                        // dispensar efectivo
-                        // mostrar efectivo dispensado, tomar el dinero.
-                    // sino
-                        // mostrar no hay suficiente dinero disponible en el cajero, proba con una cantidad menor.
-                // sino
-                    // mostrar tenes suficiente dinero en la cuenta, proba con una cantidad menor
-            // sino
-                // mostar transaccion cancelada
-                // return a menu principal
-        // mientras no se haya dispensado el efectivo
+                            // Se dispensa el efectivo del dispensador
+                            dispensadorEfectivo.dispensarEfectivo(montoIngresado);
+                            efectivoDispensado = true;
+
+                            pantalla.mostrarMensaje("Saldo disponible: $" + bdBanco.getSaldoDisponible(getNumCuenta()));
+                            pantalla.mostrarMensaje("Balance total: $" + bdBanco.getTotalBalance(getNumCuenta()));
+                            pantalla.mostrarMensaje("");
+
+                            pantalla.mostrarMensaje("Efectivo dispensado");
+                            pantalla.mostrarMensaje("");
+
+                        } else {
+                            pantalla.mostrarMensaje("No hay suficiente efectivo en el cajero");
+                            pantalla.mostrarMensaje("Intenta con un monto menor");
+                            pantalla.mostrarMensaje("");
+                        }
+                    } else {
+                        pantalla.mostrarMensaje("No hay suficiente balance");
+                        pantalla.mostrarMensaje("Intenta con un monto menor");
+                        pantalla.mostrarMensaje("");
+                    }
+                } else {
+                    pantalla.mostrarMensaje("Solo puede retirar un monto multiplo de 20.");
+                    pantalla.mostrarMensaje("");
+                }
+            } else {
+                pantalla.mostrarMensaje("Retiro cancelado.");
+                pantalla.mostrarMensaje("");
+                efectivoDispensado = true;
+            }
+        }
+        while (!efectivoDispensado);
+
+
+
     }
 
 }

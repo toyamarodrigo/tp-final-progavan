@@ -18,6 +18,22 @@ public class Deposito extends Transaccion {
         // BDBanco bdBanco = getBDBanco();
         // Pantalla pantalla = getPantalla();
 
+        Pantalla pantalla = getPantalla();
+        BDBanco bdBanco = getBDBanco();
+
+        // saldo disponible y balance de una cuenta
+        pantalla.mostrarMensaje("Ingrese el saldo que desea depositar: $");
+        bdBanco.depositar(getNumCuenta(), teclado.getEntrada());
+        montoSaldo = bdBanco.getSaldoDisponible(getNumCuenta());
+        montoBalance = bdBanco.getTotalBalance(getNumCuenta());
+
+
+        pantalla.mostrarMensaje("Saldo disponible: $" + montoSaldo);
+        pantalla.mostrarMensaje("Balance total: $" + montoBalance);
+        pantalla.mostrarMensaje("");
+
+        // Mostrar pantalla, saldo y balance
+
         // input de monto a demositar
 
         // si monto es != 0
