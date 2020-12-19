@@ -1,7 +1,7 @@
 package entities;
 
 public class Retiro extends Transaccion {
-    private double monto;
+    int montoIngresado = 0;
     private DispensadorEfectivo dispensadorEfectivo;
     private Teclado teclado;
 
@@ -15,7 +15,6 @@ public class Retiro extends Transaccion {
     @Override
     public void iniciar() {
         boolean efectivoDispensado = false;
-        int montoIngresado = 0;
 
         Pantalla pantalla = getPantalla();
         BDBanco bdBanco = getBDBanco();
