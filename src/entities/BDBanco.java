@@ -6,6 +6,7 @@ public class BDBanco {
 
     private ArrayList<Cuenta> cuentas;
 
+    // Inicializamos BDBanco con 3 cuentas.
     public BDBanco() {
         cuentas = new ArrayList<Cuenta>(3);
         cuentas.add(new Cuenta(11111, 11111, 10000.00, 15000.00));
