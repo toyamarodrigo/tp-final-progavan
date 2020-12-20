@@ -1,7 +1,7 @@
 package entities;
 
 public class Retiro extends Transaccion {
-    int montoIngresado = 0;
+    private int montoIngresado = 0;
     private DispensadorEfectivo dispensadorEfectivo;
     private Teclado teclado;
 
