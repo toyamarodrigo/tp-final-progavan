@@ -36,6 +36,7 @@ public class Cuenta {
     }
 
     public void depositar(double monto) {
+        saldoDisponible += monto;
         totalBalance += monto;
     }
 

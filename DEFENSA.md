@@ -159,5 +159,20 @@
 
 
 8. __¿Cómo explicarías la siguiente afirmación en el desarrollo presentado?__
-> “Cada objeto de una subclase es también un objeto de la superclase de esa clase.“
+“Cada objeto de una subclase es también un objeto de la superclase de esa clase.“
 
+> Esto se puede explicar mediante la Generalización y
+> Especialización.La generalización es la propiedad que permite compartir
+> información entre dos entidades evitando la redundancia.
+
+> En el comportamiento de objetos existen con frecuencia propiedades
+> que son comunes en diferentes objetos y esta propiedad se denomina
+> generalización.
+
+> El proceso inverso de la generalización por el cual se definen
+> nuevas clases a partir de otras ya existentes se denomina
+> especialización.
+
+> La herencia permite definir nuevas clases a partir de otras clases
+> ya existentes, de modo que presentan las mismas características y
+> comportamiento de estas, así como otras adicionales.
