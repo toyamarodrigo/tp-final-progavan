@@ -24,4 +24,4 @@ ejemplo, eligiendo las opciones para depositar o retirar dinero.
 
 ### UML class
 
-![https://i.imgur.com/QY1Lv5p.png](uml.png)
+![https://i.imgur.com/N84Um6X.png](uml.png)
